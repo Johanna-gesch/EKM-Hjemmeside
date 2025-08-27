@@ -1,0 +1,2950 @@
+.page {
+  display: none;
+}
+
+#hjem-page {
+  display: block;
+}
+
+#header {
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+@media (max-width: 550px) {
+    #header {
+        display: none; /* Skjuler headeren på mobil */
+    }
+}
+
+#mobil-header {
+    display: none;
+}
+
+@media (max-width: 550px) {
+    #mobil-header {
+        background-color: #000000;
+        color: #FFFFFF;
+        text-align: center;
+        justify-content: center; /* Centrerer horisontalt */
+        align-items: center; /* Centrerer vertikalt */
+        padding: 0;
+        margin: 0;
+        display: flex;
+        position: relative;
+    }
+}
+
+#mobil-header-tekst {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 9.5px;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Gør menu-knappen synlig på mobil */
+#menu-knap {
+    display: none;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 100;
+    color: rgb(255, 255, 255);
+}
+
+/* Skjul menuen i starten */
+#mobil-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: auto;
+    background: black;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    z-index: 99;
+    text-align: center;
+}
+
+/* Style knapperne inde i menuen */
+#mobil-menu .fane-knap {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+#mobil-menu .dropdown {
+    position: relative; /* Sørger for, at dropdown-menuen placeres korrekt i forhold til knappen */
+    width: 90%;
+}
+
+#mobil-menu .dropdown-menu-mobil {
+    display: none;
+    position: absolute;
+    top: 100%; /* Placerer menuen lige under knappen */
+    left: 0;
+    width: auto;
+    min-width: 100%;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#mobil-menu .dropdown-menu-mobil a {
+    display: block;
+    width: 100%;
+    background-color: #3f3f3f;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    text-align: left;
+    font-size: clamp(15px, 2vw, 18px);
+    cursor: pointer;
+}
+
+#mobil-menu .dropdown-menu-mobil.show {
+    display: block; /* Når dropdown-knappen klikkes, vis menuen */
+}
+
+#mobil-menu .dropdown button.fane-knap {
+    display: flex; /* Brug flexbox til at centrere indholdet */
+    justify-content: center; /* Centrerer teksten horisontalt */
+    align-items: center; /* Centrerer teksten og pilen vertikalt */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    width: 100%;
+    text-align: center; /* Overskriver tidligere CSS */
+    cursor: pointer;
+    position: relative; /* Sørger for, at pilen kan placeres relativt */
+}
+
+#mobil-menu #tilmeld-knap {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Luk-knap */
+.luk-knap {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Aktiver menu og knap på mobil */
+@media (max-width: 550px) {
+    #menu-knap {
+        display: block;
+    }
+}
+
+#logo {
+    position: absolute;
+    left: 0.5vw;
+    top: 10px;
+    margin: 0;
+    height: clamp(10px, 18vw, 200px);
+    width: auto;
+    z-index: 1;
+}
+
+body.hjem-page-active #logo {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    margin: 0;
+    height: clamp(10px, 11vw, 200px);
+    width: auto;
+    z-index: 1;
+}
+
+#mobil-logo {
+    display: none;
+}
+
+@media (max-width: 550px) {
+    #mobil-logo {
+        display: block;
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        margin: 0;
+        height: 80px;
+        width: auto;
+        z-index: 1;
+    }
+
+    body.hjem-page-active #mobil-logo {
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        margin: 0;
+        height: 60px;
+        width: auto;
+        z-index: 1;
+    }
+}
+
+.fane-knap {
+    background-color: rgb(0, 0, 0);
+    color: #FFFFFF;
+    display: inline-block;
+    border:none;
+    padding: 0.8rem;
+    font-size: clamp(10px, 2vw, 22px);
+}
+
+.fane-knap:hover {
+    background-color: #252525;
+    cursor: pointer;
+}
+
+#tilmeld-knap {
+    background-color: #ff0000;
+    color: #FFFFFF;
+    display: inline-block;
+    border:none;
+    padding: 0.8rem;
+    font-size: clamp(10px, 2vw, 22px);
+}
+
+#tilmeld-knap:hover {
+    background-color: #ff4f4f;
+    cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown menu (skjult som standard) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Placerer menuen lige under knappen */
+    min-width: 200px;
+    width: auto;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Når man holder musen over dropdown-knappen, vises menuen */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    width: 100%;
+    background-color: #3f3f3f;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    text-align: left;
+    font-size: clamp(15px, 2vw, 18px);
+    cursor: pointer;
+}
+
+.dropdown-menu a:hover {
+    background-color: #848484;
+}
+
+.page {
+    display: none;
+}
+
+#main {
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    flex-grow: 1;
+    min-height: auto;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Fjern default margin */
+    overflow-x: hidden;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#footer {
+    width: 100vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+
+#footer-box {
+    background-color: #e8e8e8;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 20px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 550px) {
+    #footer-box {
+        height: 120px;
+        padding-left: 10px;
+    }
+}
+
+#footer-box p {
+    margin: 1px;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+    flex-direction: column;
+    font-weight: normal;
+}
+
+@media screen and (max-width: 550px) {
+    #footer-box p {
+        font-size: 2.7vw;
+        line-height: 20px;
+    }
+}
+
+#footer-box a {
+    color: black; /* Gør teksten sort */
+    text-decoration: none; /* Fjerner understregning */
+}
+
+#footer-box a:hover {
+    text-decoration: underline; /* Tilføjer understregning ved hover (valgfrit) */
+}
+
+#footer-main {
+    background-color: #ff0000;
+    color: #FFFFFF;
+    padding-left: 5px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 550px) {
+    #footer-main {
+        height: 50px;
+    }
+}
+
+#footer-main a {
+    color: #FFFFFF; /* Gør teksten hvid */
+    text-decoration: none; /* Fjerner understregning */
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+    padding-right: 5px;
+}
+
+#footer-main a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 550px) {
+    #footer-links {
+        gap: 5px;
+    }
+}
+
+.some {
+    width: clamp(20px, 5vw, 45px);
+    height: auto;
+    padding: 1vw;
+}
+
+@media screen and (max-width: 550px) {
+    .some {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 7.5px;
+        padding-top: 7.5px;
+        width: 30px;
+        height: auto;
+    }
+}
+
+#footer-logo {
+    height: 80px;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 550px) {
+    #footer-logo {
+        height: 65px;
+        padding-right: 2px;
+    }
+}
+
+/*POPUP*/
+
+#popupForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid #000000;
+    z-index: 1000;
+    width: 350px; /* Juster bredden af popup'en */
+}
+
+@media screen and (max-width: 550px) {
+    #popupForm {
+        width: 70%; /* Juster bredden af popup'en */
+        height: auto; /* Gør højden automatisk */
+        padding: 5vw; /* Juster padding for mobil */
+    }
+}
+
+#popupForm input[type="text"], #popupForm input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+  
+.checkbox-popup-container {
+    display: inline-flex; /* Gør containeren inline-flex for at holde checkbox og tekst på samme linje */
+    align-items: center;
+    gap: 5px; /* Giver luft mellem checkbox og tekst */
+    max-width: fit-content;
+    flex-grow: 0; /* Forhindrer containeren i at vokse */
+    flex-shrink: 0; /* Forhindrer containeren i at krympe */
+    flex-basis: auto; /* Sørger for, at containeren kun fylder det nødvendige */
+}
+  
+.checkbox-popup-container input[type="checkbox"] {
+    width: 16px; /* Standard bredde for en checkbox */
+    height: 16px; /* Standard højde for en checkbox */
+    margin: 0; /* Fjern unødvendig margin */
+    padding: 0; /* Fjern unødvendig padding */
+}
+
+#signupForm-popup {
+    width: auto; /* Sørger for, at formularen ikke tvinger bredde */
+}
+
+.checkbox-popup-container span {
+    margin: 0; /* Fjern ekstra margin */
+    padding: 0; /* Fjern ekstra padding */
+}
+
+#signupForm-popup {
+    width: 100%;
+}
+  
+#popup-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 3vw;
+}
+  
+#popup-button:hover {
+    background-color: #ff4f4f;
+}
+  
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #444;
+}
+
+.openForm:hover {
+    cursor: pointer;
+}
+
+/*TAK*/
+
+#tak-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding-top: 5vw;
+    margin-top: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+    margin-bottom: 5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #tak-page h2 {
+        font-size: 8vw;
+        margin-top: 0;
+        padding-top: 50px;
+    }
+}
+
+#tak-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#tak-page p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    line-height: 4vw;
+    margin-bottom: 1.5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #tak-page p {
+        font-size: 3.5vw;
+        line-height: 6vw;
+        letter-spacing: 1px;
+    }
+}
+
+/*FEJL*/
+
+#fejl-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding-top: 5vw;
+    margin-top: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+    margin-bottom: 5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #fejl-page h2 {
+        font-size: 8vw;
+        margin-top: 0;
+        padding-top: 50px;
+    }
+}
+
+#fejl-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#fejl-page p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    line-height: 4vw;
+    margin-bottom: 1.5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #fejl-page p {
+        font-size: 3.5vw;
+        line-height: 6vw;
+        letter-spacing: 1px;
+    }
+}
+
+/*LINK*/
+
+body.link-page-active #header {
+    display: none; /* Skjuler headeren */
+}
+
+body.link-page-active #mobil-header {
+    display: none; /* Skjuler headeren */
+}
+
+body.link-page-active #footer {
+    display: none;
+}
+
+#link-page {
+    min-height: 100%;
+    background-color: #292929;
+    position: relative;
+}
+
+#link-page h2 {
+    font-size: 6vw;
+    padding-top: 2vw;
+    margin-top: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+    margin-bottom: 2vw;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}   
+
+#link-page p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 3vw;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 40px;
+}
+
+#link-logo {
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    z-index: 0;
+    padding-top: 30px;
+    margin-bottom: 10px;
+}
+
+#some-link {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    z-index: 0;
+    margin-bottom: 3vw;
+}
+
+@media screen and (max-width: 550px) {
+    #some-link {
+        margin-bottom: 50px;
+    }
+}
+
+#some-link img {
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    z-index: 0;
+}
+
+#links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    z-index: 0;
+}
+
+.link-knap {
+    background-color: #b90e0ede;
+    color: white;
+    height: 18vw;
+    width: 45vw;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 2.5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media screen and (max-width: 550px) {
+    .link-knap {
+        height: 15vw;
+        width: 90%;
+        font-size: 5vw;
+    }
+}
+
+/*HJEM*/
+
+#hjem-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+}
+
+#AI-container {
+    position: relative;
+}
+
+#AI-billede {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    z-index: 0;
+    max-width: 100vw;
+    position: relative;
+}
+
+@media screen and (max-width: 550px) {
+    #AI-billede {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    #AI-billede {
+        display: none;
+    }
+}
+
+#AI-billede-mobil {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    #AI-billede-mobil {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        z-index: 0;
+        max-width: 100vw;
+        position: relative;
+    }
+}
+
+#AI-billede-stor {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    #AI-billede-stor {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        z-index: 0;
+        max-width: 100%;
+        position: relative;
+    }
+}
+
+@media (min-width: 1800px) {
+    #AI-billede-stor {
+        display: none;
+    }
+}
+
+#AI_XL {
+    display: none;
+}
+
+@media (min-width: 1800px) and (max-width: 2400px) {
+    #AI_XL {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        z-index: 0;
+        max-width: 100%;
+        position: relative;
+    }
+}
+
+#AI_XXL {
+    display: none;
+}
+
+@media (min-width: 2400px) {
+    #AI_XXL {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        z-index: 0;
+        max-width: 100%;
+        position: relative;
+    }
+}
+
+.knap-container {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    width: 56%;
+    top: -13vw;
+    z-index: 1;
+}
+
+@media screen and (max-width: 550px) {
+    .knap-container {
+        display: flex;
+        width: 100%;
+        position: relative;
+        justify-content: space-evenly;
+        top: 3vw;
+        z-index: 1;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .knap-container {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        width: 53%;
+        top: -10vw;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 1800px) {
+    .knap-container {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        width: 53%;
+        top: -11.5vw;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 2400px) {
+    .knap-container {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        width: 53%;
+        top: -11vw;
+        z-index: 1;
+    }
+}
+
+#book-knap, #tilmeld-nu-knap {
+    flex: none;
+    width: 21vw;
+    max-width: 300px;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    font-size: clamp(1px, 1.7vw, 20px);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border-radius: 50vw;
+    text-align: center;
+    z-index: 1;
+}
+
+@media screen and (max-width: 550px) {
+    #book-knap, #tilmeld-nu-knap {
+        flex: none;
+        width: 45vw;
+        height: 12vw;
+        max-width: 300px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 0;
+        padding-right: 0;
+        border: none;
+        font-size: 3vw;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: white;
+        cursor: pointer;
+        border-radius: 50px;
+        text-align: center;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 2000px) {
+    #book-knap, #tilmeld-nu-knap {
+        flex: none;
+        width: 21vw;
+        max-width: 400px;
+        padding-top: 1.5vw;
+        padding-bottom: 1.5vw;
+        padding-left: 0;
+        padding-right: 0;
+        border: none;
+        font-size: clamp(1px, 1.7vw, 20px);
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        border-radius: 50vw;
+        text-align: center;
+        z-index: 1;
+    }
+}
+
+#book-knap {
+    background-color: gray;
+}
+
+#book-knap:hover {
+    background-color: darkgray;
+}
+
+#tilmeld-nu-knap {
+    background-color: red;
+}
+
+#tilmeld-nu-knap:hover {
+    background-color: #ff4f4f;
+}
+
+.kasse-container {
+    display: flex; /* Gør det muligt at placere kasserne ved siden af hinanden */
+    justify-content: center; /* Centrerer kasserne horisontalt */
+    align-items: center; /* Centrerer kasserne vertikalt (hvis de er forskellige højder) */
+    gap: 0; /* Afstand mellem kasserne */
+    margin: 0 auto;
+    font-family:Arial, Helvetica, sans-serif;
+    width: 80%;
+}
+
+@media screen and (max-width: 550px) {
+    .kasse-container {
+        flex-direction: column; /* Ændrer layoutet til en kolonne */
+        gap: 5vw; /* Tilføjer afstand mellem kasserne */
+        align-items: center; /* Centrerer kasserne horisontalt */
+        margin-top: 8vw;
+    }
+}
+
+.kasse {
+    background: linear-gradient(to bottom, #848484, #3f3f3f); /* Mørkegrå gradient */
+    color: white; /* Hvid tekst */
+    text-align: center; /* Centrerer teksten */
+    width: 50vw; /* Bredde på kassen */
+    aspect-ratio: 1; /* Sikrer at kassen er kvadratisk */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Giver en let skygge */
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-height: 100px;
+}
+
+@media screen and (max-width: 550px) {
+    .kasse {
+        width: 90%; /* Gør kassen smallere på mobil */
+        aspect-ratio: 1; /* Sikrer at kassen er kvadratisk */
+        min-height: 100px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .kasse {
+        width: 35vw;
+        aspect-ratio: 1; /* Sikrer at kassen er kvadratisk */
+    }
+}
+
+@media (min-width: 2400px) {
+    .kasse {
+        width: 30vw;
+        aspect-ratio: 1; /* Sikrer at kassen er kvadratisk */
+    }
+}
+
+.kasse h2 {
+    font-size: clamp(1px, 2.5vw, 30px);
+    margin-bottom: -15px;
+}
+
+@media (min-width: 1200px) {
+    .kasse h2 {
+        margin-bottom: -3vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .kasse h2 {
+        font-size: 5vw;
+    }
+}
+
+@media (min-width: 1800px) {
+    .kasse h2 {
+        margin-bottom: -1vw;
+    }
+}
+
+.kasse p {
+    font-size: clamp(1px, 2.5vw, 28px);
+    padding: 10px;
+    margin-bottom: -30px;
+}
+
+@media screen and (max-width: 550px) {
+    .kasse p {
+        font-size: 4.5vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .kasse p {
+        padding: 2vw;
+        line-height: 3vw;
+    }
+}
+
+#formular-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+#baggrundsbillede {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 4vw;
+}
+
+@media screen and (max-width: 550px) {
+    #baggrundsbillede {
+        display: none;
+    }
+}
+
+#stor-baggrund {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    #stor-baggrund {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 8vw;
+    }
+}
+
+#form-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left-side, #right-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#send-button {
+    position: absolute;
+    bottom: clamp(1px, 5vw, 50px);
+    font-size: clamp(1px, 3.5vw, 35px);
+    letter-spacing: -0.5px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 50vw;
+    cursor: pointer;
+}
+
+#right-side h2 {
+    display: flex;
+    font-weight: normal;
+    align-items: center;
+    letter-spacing: 1px;
+    font-size: clamp(1px, 4vw, 35px);
+}
+
+#felter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    gap: 1vw;
+    box-sizing: border-box;
+}
+
+#felter input, #felter textarea {
+    width: 100%;
+    padding: 1.2vw;
+    font-size: clamp(1px, 1.6vw, 20px);
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+#felter textarea {
+    height: 10vw;
+}
+
+@media screen and (max-width: 550px) {
+    #formular-container {
+        display: flex;
+        flex-direction: column; /* Sørger for, at alt står under hinanden */
+        align-items: center; /* Centrerer indholdet horisontalt */
+        justify-content: center; /* Centrerer indholdet vertikalt */
+        width: 100%; /* Gør formularen smallere på mobil */
+        margin: 0 auto; /* Centrerer formularen på siden */
+    }
+
+    #form-content {
+        display: flex;
+        flex-direction: column; /* Sørger for, at venstre og højre side står under hinanden */
+        align-items: center; /* Centrerer indholdet horisontalt */
+        width: 100%; /* Formularen fylder hele bredden */
+    }
+
+    #left-side, #right-side {
+        width: 100%; /* Sørger for, at begge sider fylder hele bredden */
+    }
+
+    #felter input, #felter textarea {
+        width: 80vw; /* Sørger for, at felterne fylder hele bredden */
+        font-size: 5vw; /* Gør teksten større på mobil */
+        margin-bottom: 2vw;
+        padding: 2vw;
+    }
+
+    #send-button {
+        width: 50%; /* Gør knappen mindre og centreret */
+        font-size: 5vw; /* Justerer tekststørrelsen på knappen */
+        margin-bottom: 5vw;
+    }
+
+    #right-side h2 {
+        font-size: 8vw; /* Gør overskriften større på mobil */
+        text-align: center; /* Centrerer overskriften */
+        margin-top: -20vw;
+    }
+
+    #felter textarea {
+        height: 80px;
+    }
+}
+
+/* Styling for felter med fejl */
+.invalid {
+    border: 2px solid red !important;
+    outline: none;
+}
+
+/* Styling for fejlbeskeder */
+.fejlbesked {
+    color: red;
+    font-size: 14px;
+}  
+
+#telefonFejl-beskedform {
+    color: red;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: none; /* Skjuler meddelelsen, når der ikke er fejl */
+}
+
+#telefon-besked.invalid + #telefonFejl-beskedform {
+    display: block;
+    margin-top: -0.5vw;
+    margin-bottom: 0;
+}
+
+#emailFejl-beskedform {
+    color: red;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: none; /* Skjuler meddelelsen, når der ikke er fejl */
+}
+
+#email-besked.invalid + #emailFejl-beskedform {
+    display: block;
+    margin-top: -0.5vw;
+    margin-bottom: 0;
+}
+
+#telefonFejl-bookingform {
+    color: red;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: none; /* Skjuler meddelelsen, når der ikke er fejl */
+}
+
+#telefon-booking.invalid + #telefonFejl-bookingform {
+    display: block;
+    margin-top: -0.5vw;
+    margin-bottom: 1vw;
+}
+
+/*SEMINARER*/
+
+#seminar-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding: 5px;
+    margin: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+    margin-bottom: 5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #seminar-page h2 {
+        font-size: 8vw;
+        margin-top: 30px;
+    }
+}
+
+#seminar-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#seminar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #seminar {
+        width: 70%;
+    }
+}   
+
+#folk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+#seminar-page p {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    line-height: clamp(1px, 4vw, 70px);
+    margin-bottom: 1.5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #seminar-page p {
+        font-size: 3.5vw;
+        line-height: 6vw;
+        letter-spacing: 1px;
+    }
+}
+
+#seminar-page h4 {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 40px);
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #seminar-page h4 {
+        font-size: 5vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#seminar-knap {
+    padding-right: 3vw;
+    padding-left: 3vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    font-size: clamp(5px, 4vw, 80px);
+    border: none;
+    border-radius: 50vw;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5vw;
+    margin-top: 2vw;
+}
+
+@media screen and (max-width: 550px) {
+    #seminar-knap {
+        padding-right: 5vw;
+        padding-left: 5vw;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+        font-size: 6vw;
+        border: none;
+        border-radius: 50px;
+        background-color: #ff0000;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+    }
+}
+
+#seminar-formular {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid #000000;
+    z-index: 1000;
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    #seminar-formular {
+        width: 70%; /* Juster bredden af popup'en */
+        height: auto; /* Gør højden automatisk */
+        padding: 5vw; /* Juster padding for mobil */
+    }
+}
+
+#seminar-formular.vis {
+    display: block;
+}
+
+#seminar-formular input[type="text"], #seminar-formular input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#seminar-formular textarea {
+    width: 90%;
+    height: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.popup-skjult {
+    display: none;
+}
+
+#seminar-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 3vw;
+}
+
+/*OM OS*/
+
+#om-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding: 0;
+    padding: 5px;
+    margin: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+}
+
+@media screen and (max-width: 550px) {
+    #om-page h2 {
+        font-size: 8vw;
+        padding-top: 30px;
+    }
+}
+
+#om-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#klubbens_historie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #klubbens_historie {
+        width: 70%;
+    }
+}
+
+#klubbens_historie h3 {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 55px);
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #klubbens_historie h3 {
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#klubbens_historie p {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    letter-spacing: 1px;
+    line-height: 3vw;
+}
+
+@media screen and (max-width: 550px) {
+    #klubbens_historie p {
+        font-size: 3vw;
+        line-height: 4vw;
+        letter-spacing: 1px;
+    }
+}
+
+#instruktører {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #instruktører {
+        width: 70%;
+    }
+}
+
+#instruktører h3 {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 55px);
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #instruktører h3 {
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+.instruktør-tekst {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+.instruktør-tekst h4 {
+    color: #000000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 2vw, 30px);
+    font-weight: normal;
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 550px) {
+    .instruktør-tekst h4 {
+        margin-top: 5px;
+        margin-bottom: 2px;
+        font-size: 2.8vw;
+        letter-spacing: 0;
+    }
+}
+
+.instruktør-tekst p {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: clamp(1px, 1.85vw, 30px);
+    letter-spacing: 0.5px;
+    line-height: 3vw;
+}
+
+@media screen and (max-width: 550px) {
+    .instruktør-tekst p {
+        font-size: 2.5vw;
+        line-height: 3.5vw;
+        letter-spacing: 0;
+    }
+}
+
+#rasmus-billede {
+    width: auto;
+    height: clamp(1px, 45vw, 800px);
+    max-height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+@media screen and (max-width: 550px) {
+    #rasmus-billede {
+        width: auto;
+        height: 55vw;
+        max-height: 100%;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+}
+
+#ra_certifikater {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1vw;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+.ra_certifikat {
+    width: auto;
+    height: clamp(1px, 9.5vw, 200px);
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+@media screen and (max-width: 550px) {
+    .ra_certifikat {
+        width: auto;
+        height: 11vw;
+    }
+}
+
+#ra_certifikat_s {
+    width: clamp(1px, 9.5vw, 200px);
+    height: auto;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+@media screen and (max-width: 550px) {
+    #ra_certifikat_s {
+        width: 11vw;
+        height: auto;
+    }
+}
+
+#certifikat {
+    width: clamp(1px, 13vw, 200px);
+    height: auto;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+#rasmus, #ronni {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: 2px solid #000000;
+    width: 100%;
+    gap: 15px;
+    margin: 8px;
+}
+
+@media screen and (max-width: 550px) {
+    #rasmus, #ronni {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        border: 2px solid #000000;
+        width: 115%;
+        gap: 10px;
+    }
+}
+
+#ronni-billede {
+    width: auto;
+    height: clamp(1px, 45vw, 800px);
+    max-height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+@media screen and (max-width: 550px) {
+    #ronni-billede {
+        width: auto;
+        height: 55vw;
+        max-height: 100%;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+}
+
+.nederst {
+    margin-bottom: 2vw !important;
+}
+
+#ledelse h3 {
+    padding: 0;
+    margin-bottom: 10px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 55px);
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #ledelse h3 {
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#ledelse a {
+    cursor: pointer;
+}
+
+#ledelse p {
+    width: 100%;
+    text-align: center;
+    font-size: clamp(1px, 2vw, 30px);
+    padding-bottom: 2vw;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 550px) {
+    #ledelse p {
+        font-size: 3vw;
+        line-height: 4vw;
+        letter-spacing: 1px;
+    }
+}
+
+#ledelse-container {
+    display: flex;
+    justify-content: center; /* Centrerer profilerne på midten */
+    gap: 25px; /* Skaber afstand mellem profilerne */
+    margin-bottom: 15vw;
+}
+
+@media screen and (max-width: 550px) {
+    #ledelse-container {
+        gap: 10px; /* Tilføjer afstand mellem profilerne */
+    }
+}
+
+.profil {
+    display: flex;
+    flex-direction: column; /* Placerer billedet over teksten */
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(1px, 1.8vw, 35px);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 550px) {
+    .profil {
+        font-size: 3vw;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        width: 80%;
+    }
+}
+
+.profil img {
+    width: clamp(1px, 25vw, 500px);
+    height: auto;
+    border: 4px solid rgb(0, 0, 0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Giver en glødende effekt omkring rammen */
+    border-radius: 0px; /* Rundede hjørner */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(140, 140, 140, 0.3)); /* Giver en lysere effekt */
+    margin-bottom: 1vw;
+}
+
+@media screen and (max-width: 550px) {
+    .profil img {
+        width: 25vw;
+        height: auto;
+        border: 4px solid rgb(0, 0, 0);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Giver en glødende effekt omkring rammen */
+        border-radius: 0px; /* Rundede hjørner */
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(140, 140, 140, 0.3)); /* Giver en lysere effekt */
+        margin-bottom: 1vw;
+    }
+}
+
+/*PRAKTISK*/
+
+#praktisk-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding: 0;
+    padding: 5px;
+    margin: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+}
+
+@media screen and (max-width: 550px) {
+    #praktisk-page h2 {
+        font-size: 8vw;
+        padding-top: 30px;
+    }
+}
+
+#praktisk-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#træningen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #træningen {
+        width: 70%;
+    }
+}
+
+#træningen h3 {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 55px);
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #træningen h3 {
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#træningen h6 {
+    padding: 0;
+    margin-top: 3vw;
+    margin-bottom: 1vw;
+    color: #000000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 1.8vw, 30px);
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #træningen h6 {
+        font-size: 3vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#træningen p {
+    padding: 0.5vw;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    letter-spacing: 1px;
+    line-height: 3.5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #træningen p {
+        font-size: 3vw;
+        line-height: 5vw;
+        letter-spacing: 1px;
+    }
+}
+
+#træningsbillede-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.træningsbillede {
+    width: 37vw;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #000000;
+}
+
+#hold {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #hold {
+        width: 70%;
+    }
+}
+
+#hold h3 {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 55px);
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #hold h3 {
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#hold p {
+    padding: 1vw;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    letter-spacing: 1px;
+    line-height: 3.5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #hold p {
+        font-size: 3vw;
+        line-height: 5vw;
+        letter-spacing: 1px;
+    }
+}
+
+.tider {
+    margin-bottom: -2vw !important;
+    margin-top: 1vw !important;
+}
+
+@media screen and (max-width: 550px) {
+    .tider {
+        margin-bottom: -1vw !important;
+        margin-top: 0.5vw !important;
+    }
+}
+
+#hold a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#hold a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#hold_nederst {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5vw !important;
+}
+
+#hold_nederst p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(1px, 2vw, 50px) !important;
+    padding: 0;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 550px) {
+    #hold_nederst {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #hold_nederst p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 3vw !important;
+    }
+}
+
+#priser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #priser {
+        width: 70%;
+    }
+}
+
+#priser h3 {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 55px);
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #priser h3 {
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#priser p {
+    padding: 1vw;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 550px) {
+    #priser p {
+        font-size: 3vw;
+        line-height: 4.5vw;
+        letter-spacing: 1px;
+    }
+}
+
+#graduering {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 15vw;
+}
+
+@media (min-width: 1800px) {
+    #graduering {
+        width: 70%;
+    }
+}
+
+#graduering h3 {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 55px);
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #graduering h3 {
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#graduering p {
+    padding: 0.7vw;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    letter-spacing: 1px;
+    line-height: 3vw;
+}
+
+@media screen and (max-width: 550px) {
+    #graduering p {
+        font-size: 3vw;
+        line-height: 6vw;
+        letter-spacing: 1px;
+    }
+}
+
+.gradfarver {
+    height: 3.5vw;
+    width: auto;
+}
+
+#grad_bund {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1vw;
+}
+
+#grad-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    margin-top: 1vw;
+    margin-bottom: 10px;
+}
+
+#grad_billede {
+    width: 45vw;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #3d3d3d;
+}
+
+@media screen and (max-width: 550px) {
+    #grad_billede {
+        width: 67%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 5vw;
+        padding: 0;
+        border: 1px solid #3d3d3d;
+    }
+}
+
+/*FAQ*/
+
+#faq-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding: 0;
+    padding: 5px;
+    margin: 0;
+    margin-bottom: 7vw;
+    text-align: center; /* Centrerer teksten horisontalt */
+}
+
+@media screen and (max-width: 550px) {
+    #faq-page h2 {
+        font-size: 8vw;
+        padding-top: 30px;
+    }
+}
+
+#faq-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#faq-page details {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #faq-page details {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #faq-page details {
+        margin-top: 3vw;
+    }
+}
+
+#faq-page summary {
+    font-size: clamp(1px, 3vw, 55px);
+    padding: 10px;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {
+    #faq-page summary {
+        font-size: 4.5vw;
+        padding: 10px;
+        color: rgb(255, 0, 0);
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.tekst {
+    font-size: clamp(1px, 2vw, 30px);
+    padding: 1vw;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    letter-spacing: 1px;
+    line-height: 3.5vw;
+}
+
+@media screen and (max-width: 550px) {
+    .tekst {
+        font-size: 3.5vw;
+        line-height: 4.5vw;
+        letter-spacing: 1px;
+    }
+}
+
+.knapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    width: 45%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 550px) {
+    .knapper {
+        width: 50%;
+    }
+}
+
+#booking-knap {
+    background-color: #3f3f3f;
+    color: #FFFFFF;
+    display: inline-block;
+    border:none;
+    border-radius: 50vw;
+    padding: 0.8em 1em;
+    font-size: clamp(15px, 3.5vw, 40px);
+    margin-bottom: 15vw;
+}
+
+#booking-knap:hover {
+    background-color: #5C5F66;
+    cursor: pointer;
+}
+
+#tilmelding-knap {
+    background-color: #ff0000;
+    color: #FFFFFF;
+    display: inline-block;
+    border:none;
+    border-radius: 50vw;
+    padding: 0.8em 1em;
+    font-size: clamp(15px, 3.5vw, 40px);
+    margin-top: 5vw;
+}
+
+#tilmelding-knap:hover {
+    background-color: #ff4f4f;
+    cursor: pointer;
+}
+
+/*TILMELDING*/
+
+#tilmeld-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding: 0;
+    padding: 5px;
+    margin: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+}
+
+@media screen and (max-width: 550px) {
+    #tilmeld-page h2 {
+        font-size: 8vw;
+        padding-top: 30px;
+    }
+}
+
+#tilmeld-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#tekst-boks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 1vw;
+    background-color: #5C5F66;
+    color: white;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 550px) {
+    #tekst-boks {
+        width: 60%;
+        margin-top: 3vw;
+        margin-bottom: 1vw;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+#tekst-boks p {
+    padding: 1vw;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(1px, 2.5vw, 40px);
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 550px) {
+    #tekst-boks p {
+        font-size: 3.5vw;
+        letter-spacing: 1px;
+    }
+}
+
+#tekst-boks a {
+    cursor: pointer;
+}
+
+#tilmeld-page {
+    position: relative;
+    background-image: url('stor_baggrund.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+
+#switch-buttons-tilmeld {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin-top: 1vw;
+    margin-bottom: -5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #switch-buttons-tilmeld {
+        margin-top: 3vw;
+    }
+}
+
+#btn-junior-tilmeld:not(.active) {
+    background-color:#ead090;
+    color: #e7955b;
+    padding: 1vw 2vw;
+    font-size: clamp(20px, 2vw, 40px);
+    border: 1px solid #e7955b;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#btn-junior-tilmeld.active {
+    background-color: #ffbf1c;
+    color: #ef6400;
+    padding: 1vw 2vw;
+    font-size: clamp(20px, 2vw, 40px);
+    border: 1px solid #ef6400;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#btn-16-tilmeld:not(.active){
+    background-color:#cdcbcb;
+    color: #9a9a9a;
+    padding: 1vw 2vw;
+    font-size: clamp(20px, 2vw, 40px);
+    border: 1px solid #9a9a9a;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#btn-16-tilmeld.active {
+    background-color: #c3c3c3;
+    color: #000000;
+    padding: 1vw 2vw;
+    font-size: clamp(20px, 2vw, 40px);
+    border: 1px solid #000000;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#tilmeldForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 5vw;
+    color: rgb(0, 0, 0);
+}
+
+#tilmeldForm h6 {
+    font-size: clamp(1px, 2.5vw, 40px);
+    margin: 0;
+    margin-top: 1vw;
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 550px) {
+    #tilmeldForm h6 {
+        font-size: 3.5vw;
+        margin-top: 3vw;
+        margin-bottom: 0;
+    }
+}
+
+#tilmeldForm p {
+    font-size: clamp(1px, 2vw, 30px);
+    margin: 0;
+    text-align: left;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    #tilmeldForm p {
+        font-size: 3vw;
+        line-height: 4vw;
+        letter-spacing: 1px;
+    }
+}
+
+#tilmeldForm input {
+    padding: 1.5vw;
+    font-size: clamp(5px, 2vw, 20px);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 550px) {
+    #tilmeldForm input {
+        padding: 2vw;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+        font-size: 2.5vw;
+    }
+}
+
+#tilmeldForm button {
+    padding: 1.5vw;
+    font-size: clamp(5px, 3.5vw, 40px);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 50vw;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 4vw;
+    margin-bottom: 6vw;
+    width: 30%;
+    display: block;
+}
+
+@media screen and (max-width: 550px) {
+    #tilmeldForm button {
+        padding: 2vw;
+        font-size: 5vw;
+        width: 50%;
+        margin-top: 50px;
+        margin-bottom: 60px;
+    }
+}
+
+#tilmeldForm button:hover {
+    background-color: #ff4f4f;
+    cursor: pointer;
+}
+
+.tilmeld-felter {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 100%;
+}
+
+.række, .række2 {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.række2 input {
+    width: calc(50% - 1vw); /* Each input takes 50% minus the gap */
+    box-sizing: border-box; /* Includes padding and border in width */
+}
+
+.række input {
+    width: calc(100% - 2vw); /* Single input takes full width minus the gap */
+    box-sizing: border-box;
+}
+
+.overlay-message {
+    position: fixed; /* Makes it stay in the same position on the screen */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the element's size */
+    background-color: rgba(255, 255, 255, 0.9); /* Red background with some transparency */
+    color: white; /* White text for contrast */
+    padding: 20px; /* Adds some space around the text */
+    border-radius: 10px; /* Rounds the corners */
+    font-size: 1.5rem; /* Adjusts the font size */
+    text-align: center; /* Centers the text */
+    z-index: 1000; /* Ensures it appears on top of everything */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for better visibility */
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: flex-start;
+    width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    .checkbox-container {
+        margin-bottom: 2vw;
+    }
+}
+
+.checkbox-container label {
+    display: flex;
+    align-items: center; /* Aligns the checkbox and text vertically */
+    font-size: 1rem; /* Adjusts the font size */
+    cursor: pointer; /* Makes the label clickable */
+}
+
+.checkbox-container input[type="radio"],
+.checkbox-container input[type="checkbox"] {
+    width: 2em;  /* Brug en større og responsiv størrelse */
+    height: 2em;
+    border: 2px solid #000;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+    aspect-ratio: 1 / 1; /* Sikrer en rund form */
+}
+
+.checkbox-container p {
+    font-size: 1rem; /* Adjusts the font size */
+    line-height: 3vw;
+}
+
+#helbred-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    align-items: flex-start;
+    width: 100%;
+}
+
+#helbred-text-container label {
+    font-size: clamp(1px, 2.5vw, 40px);
+    font-weight: 500;
+}
+
+#helbred-beskrivelse {
+    border: none;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bb1 {
+    font-weight: normal;
+    font-size: clamp(1px, 2vw, 30px);
+}
+
+#kort {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(1px, 1.5vw, 25px) !important;
+    color: #5C5F66;
+}
+
+/*BOOKING*/
+
+#booking-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding: 0;
+    padding: 5px;
+    margin: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+}
+
+@media screen and (max-width: 550px) {
+    #booking-page h2 {
+        font-size: 6vw;
+        padding-top: 30px;
+        margin-bottom: 8vw;
+    }
+}
+
+#booking-page h3 {
+    font-size: clamp(1px, 3vw, 55px);
+    padding: 0;
+    padding: 5px;
+    margin: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+    margin-top: 5vw;
+    margin-bottom: 1vw;
+}
+
+@media screen and (max-width: 550px) {
+    #booking-page h3 {
+        font-size: 5vw;
+        padding-top: 30px;
+        margin-bottom: 1vw;
+    }
+}
+
+#booking-page p {
+    font-size: clamp(17px, 1.5vw, 30px);
+    padding: 0;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    text-align: center;
+    letter-spacing: 1px;
+    color:rgba(0, 0, 0, 0.601);
+}
+
+@media screen and (max-width: 550px) {
+    #booking-page p {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+}
+
+#booking-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#booking-page {
+    position: relative;
+    background-image: url('booking_baggrund.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+@media (max-width: 550px) {
+    #booking-page {
+        background-image: url('stor_baggrund.png');
+    }
+}
+
+#switch-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin-top: 2vw;
+    margin: 0.5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #switch-buttons {
+        margin-top: 3vw;
+        margin-bottom: 2vw;
+    }
+}
+
+button .label {
+    font-size: 1.2em; /* lidt større end standard */
+    font-weight: bold;
+    display: block;
+}
+
+button .time {
+    font-size: 0.8em; /* mindre tekst */
+    color: #666; /* lidt lysere farve */
+    display: block;
+}
+
+#btn-junior:not(.active) {
+    background-color:#ead090;
+    color: #e7955b;
+    padding: 1vw 2vw;
+    font-size: clamp(20px, 2vw, 40px);
+    border: 1px solid #e7955b;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#btn-junior.active {
+    background-color: #ffbf1c;
+    color: #ef6400;
+    padding: 1vw 2vw;
+    font-size: clamp(20px, 2vw, 40px);
+    border: 1px solid #ef6400;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#btn-16:not(.active){
+    background-color:#cdcbcb;
+    color: #9a9a9a;
+    padding: 1vw 2vw;
+    font-size: clamp(20px, 2vw, 40px);
+    border: 1px solid #9a9a9a;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#btn-16.active {
+    background-color: #c3c3c3;
+    color: #000000;
+    padding: 1vw 2vw;
+    font-size: clamp(20px, 2vw, 40px);
+    border: 1px solid #000000;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+#bookingForm { /*felter samlet + knap*/
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 0;
+    color: white;
+}
+
+@media screen and (max-width: 550px) {
+    #bookingForm {
+        margin-top: 0;
+        width: 70%;
+    }
+}
+
+#booking-felter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+#telefon-booking {
+    box-sizing: border-box; /* Sikrer at border ikke øger størrelsen */
+}
+
+#booking-felter input {
+    padding: 1.5vw;
+    font-size: clamp(5px, 2.5vw, 20px);
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 550px) {
+    #booking-felter input {
+        font-size: clamp(5px, 4vw, 20px);
+        padding: 3vw;
+    }
+}
+
+#bookingForm button {
+    padding: 1.5vw;
+    font-size: clamp(5px, 2.5vw, 20px);
+    border: none;
+    border-radius: 50vw;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #bookingForm button {
+        font-size: clamp(5px, 5vw, 20px);
+        font-weight: bold;
+        padding: 2.5vw;
+    }
+}
+
+/*BETINGELSER*/
+
+#betingelser-page h2 {
+    font-size: clamp(1px, 5vw, 60px);
+    padding: 0;
+    padding: 5px;
+    margin: 0;
+    text-align: center; /* Centrerer teksten horisontalt */
+    margin-bottom: 5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #betingelser-page h2 {
+        font-size: 6.3vw;
+        padding-top: 30px;
+    }
+}
+
+#betingelser-page {
+    min-height: 100%;
+    background-color: #e8e8e8;
+    position: relative;
+}
+
+#betingelser-vilkår {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #betingelser-vilkår {
+        width: 70%;
+    }
+}
+
+#betingelser-page h3 {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    font-size: clamp(1px, 3vw, 55px);
+    font-weight: normal;
+    text-align: left;
+}
+
+@media screen and (max-width: 550px) {
+    #betingelser-page h3 {
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+#betingelser-page p {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: clamp(1px, 2vw, 30px);
+    letter-spacing: 1px;
+    line-height: 3.5vw;
+}
+
+@media screen and (max-width: 550px) {
+    #betingelser-page p {
+        font-size: 3vw;
+        line-height: 4.5vw;
+        letter-spacing: 1px;
+    }
+}
+
+#privatlivspolitik {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1800px) {
+    #privatlivspolitik {
+        width: 70%;
+    }
+}

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krav Maga Esbjerg</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Standard favicon -->
+    <link rel="icon" href="EKM - Icon Colour-kopi.png" type="image/png" sizes="32x32">
+
+    <!-- Højopløsningsfavicon til højopløsningsskærme -->
+    <link rel="icon" href="EKM - Icon Colour-kopi.png" type="image/png" sizes="192x192">
+
+    <!-- Apple Touch Icon (til iOS og macOS) -->
+    <link rel="apple-touch-icon" href="EKM - Icon Colour-kopi.png" sizes="512x512">
+</head>
+<body class="hjem-page-active">      
+    <header id="header">
+        <img id="logo" src="logo.png" alt="Logo">
+        <button class="fane-knap" onclick="navigateTo('/hjem')">HJEM</button>
+        <button class="fane-knap" onclick="navigateTo('/seminarer')">SEMINARER</button>
+        <div class="dropdown">
+            <button class="fane-knap" onclick="navigateTo('/om')">OM OS ▼</button>
+            <div class="dropdown-menu">
+                <a href="#klubbens_historie">Klubbens Historie</a>
+                <a href="#instruktører">Instruktører</a>
+                <a href="#ledelse">Ledelse</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="fane-knap" onclick="navigateTo('/praktisk')">PRAKTISK INFO ▼</button>
+            <div class="dropdown-menu">
+                <a href="#træningen">Træningen</a>
+                <a href="#hold">Træningstider</a>
+                <a href="#priser">Priser</a>
+                <a href="#graduering">Graduering</a>
+            </div>
+        </div>
+        <button class="fane-knap" onclick="navigateTo('/faq')">FAQ</button>
+        <button id="tilmeld-knap" onclick="navigateTo('/tilmeld')">TILMELD DIG</button>
+    </header>
+    <header id="mobil-header">
+        <p id="mobil-header-tekst">KRAV MAGA ESBJERG</p>
+        <img id="mobil-logo" src="logo.png" alt="Logo">
+        <button id="menu-knap" onclick="toggleMenu()">☰</button>
+        <nav id="mobil-menu">
+            <button class="fane-knap" onclick="navigateTo('/hjem'); toggleMenu()">HJEM</button>
+            <button class="fane-knap" onclick="navigateTo('/seminarer'); toggleMenu()">SEMINARER</button>
+            <div class="dropdown">
+                <button class="fane-knap" onclick="toggleDropdownMenu(event)" ondblclick="navigateTo('/om'); toggleMenu()">OM OS ▼</button>
+                <div class="dropdown-menu-mobil">
+                    <a href="#klubbens_historie">Klubbens Historie</a>
+                    <a href="#instruktører">Instruktører</a>
+                    <a href="#ledelse">Ledelse</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="fane-knap" onclick="toggleDropdownMenu(event)" ondblclick="navigateTo('/praktisk'); toggleMenu()">PRAKTISK INFO ▼</button>
+                <div class="dropdown-menu-mobil">
+                    <a href="#træningen">Træningen</a>
+                    <a href="#hold">Træningstider</a>
+                    <a href="#priser">Priser</a>
+                    <a href="#graduering">Graduering</a>
+                </div>
+            </div>
+            <button class="fane-knap" onclick="navigateTo('/faq'); toggleMenu()">FAQ</button>
+            <button id="tilmeld-knap" onclick="navigateTo('/tilmeld'); toggleMenu()">TILMELD DIG</button>
+        </nav>
+    </header>    
+    <main id="main">
+        <div id="link-page" class="page">
+            <img id="link-logo" src="icon-logo.png" alt="Logo">
+            <h2>Krav Maga Esbjerg</h2>
+            <p>🕊️ Walk in peace | Learn self-defence 💪</p>
+            <div id="some-link">
+                <a href="https://www.facebook.com/krav.esbjerg" target="_blank">
+                    <img src="facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/krav_maga_esbjerg/" target="_blank">
+                    <img src="insta.png" alt="Instagram">
+                </a>
+            </div>
+            <div id="links-container">
+                <button class="link-knap" onclick="navigateTo('/hjem')">Hjemmeside</button>
+                <button class="link-knap" onclick="navigateTo('/booking')">Book din GRATIS prøvetime HER</button>
+                <button class="link-knap" onclick="navigateTo('/hjem'); setTimeout(function(){ document.getElementById('send_besked').scrollIntoView({ behavior: 'smooth' }); }, 300);">Skriv til os</button>
+            </div>
+        </div>
+        <div id="hjem-page" class="page">
+            <div id="AI-container">
+                <img id="AI-billede-mobil" src="AI-billede-mobil.png" alt="Krav Maga">
+                <img id="AI-billede" src="AI gen. billede.png" alt="Krav Maga">
+                <img id="AI-billede-stor" src="AI-billede-stor.png" alt="Krav Maga">
+                <img id="AI_XL" src="AI_XL.png" alt="Krav Maga">
+                <img id="AI_XXL" src="AI_XXL.png" alt="Krav Maga">
+            </div>
+            <div class="knap-container">
+                <button id="book-knap" onclick="navigateTo('/booking')">BOOK PRØVETIME NU</button>
+                <button id="tilmeld-nu-knap" onclick="navigateTo('/tilmeld')">TILMELD DIG NU</button>
+            </div>
+            <div class="kasse-container">
+                <div class="kasse">
+                    <h2>KOM SOM DU ER</h2>
+                    <p>Skulle du føle dig begrænset så kom alligevel. Vi er en
+                        alsidig skare af personer med forskellige baggrunde og
+                        nationaliteter.</p>
+                    <p>Teknikkerne i Krav Maga er ikke baseret på overlegen
+                        styrke, fleksibilitet og udholdenhed, men er designet til,
+                        at alle skal kunne forsvare sig selv og andre.</p>
+                </div>
+                <div class="kasse">
+                    <h2>TRÆN FOR DIN SIKKERHED... OG ANDRES</h2>
+                    <p>Har du eller en pårørende været udsat for truende
+                        adfærd eller et voldeligt overfald?
+                        Træning i selvforsvar kan betydeligt øge dine
+                        muligheder for at komme ud af truende eller voldelige
+                        situationer.</p>
+                </div>
+            </div>
+            <section id="send_besked">
+                <div id="formular-container">
+                    <img id="baggrundsbillede" src="baggrundsbillede.png" alt="Baggrundsbillede">
+                    <img id="stor-baggrund" src="stor_baggrund.png" alt="Stor Baggrund">
+                    <div id="form-content">
+                        <div id="left-side">
+                            <button type="submit" id="send-button">SEND BESKED</button>
+                        </div>
+                        <div id="right-side">
+                            <h2>SKRIV TIL OS</h2>
+                            <form id="beskedForm" action="https://formspree.io/f/xkgjvjoz" method="POST">
+                                <div id="felter">
+                                    <input type="text" id="navn-besked" name="navn" placeholder="Navn*" required>
+                                    
+                                    <input type="tel" id="telefon-besked" name="telefon" placeholder="Telefon*" required>
+                                    <span id="telefonFejl-beskedform" class="fejlbesked"></span>
+
+                                    <input type="email" id="email-besked" name="email" placeholder="Email*" required>
+                                    <span id="emailFejl-beskedform" class="fejlbesked"></span>
+
+                                    <textarea id="besked" name="besked" placeholder="Besked*" required></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>                          
+        </div>
+        <div id="seminar-page" class="page">
+            <div id="seminar">
+                <h2>Seminarer</h2>
+                <img id="folk" src="Folk.png" alt="Folk">
+                <p>Er I en virksomhed, forening eller større gruppe, der ønsker et anderledes, lærerigt og aktivt arrangement?</p>
+                <p>Vores seminarer tilbyder en praktisk og engagerende introduktion til grundlæggende selvforsvarsteknikker – tilpasset netop jeres behov.</p>
+                <p>Uanset om det er som en del af teambuilding, et firmaarrangement, en foreningsaktivitet, eller blot ud fra en interesse for selvforsvar, sammensætter vi et seminar, der giver jer både fysisk aktivitet, samarbejde og indblik i selvforsvar.</p>
+                <h4>Hvad kan i forvente?</h4>
+                <p>• En introduktion til basale selvforsvarsprincipper.</p>
+                <p>• Praktiske øvelser med trygge og erfarne instruktører.</p>
+                <p>• En sjov og aktiv oplevelse, der styrker fællesskab og tillid.</p>
+                <p>• Fokus på reaktion, kropsbevidsthed og håndtering af stressede og uventede situationer.</p>
+                <p>• Mulighed for at stille spørgsmål og få indblik i vores tilgang.</p>
+                <p> </p>
+                <p>Seminarerne kræver ingen forudgående erfaring og kan tilpasses alle niveauer. Vi tilrettelægger indholdet, så det passer til jeres gruppe – både i forhold til tid, varighed og intensitet.</p>
+                <h4>Praktisk info</h4>
+                <p>📍 Seminarerne afholdes enten i vores lokaler eller hos jer, alt efter jeres ønsker.</p>
+                <p>📆 Tidspunkt og varighed aftales individuelt samt priser.</p>
+                <p>💬 Kontakt os for en uforpligtende snak og et tilbud.</p>
+                <button id="seminar-knap">Kontakt os</button>
+                <div id="seminar-formular" class="popup-skjult">
+                    <form id="seminar-form" action="https://formspree.io/f/meoanwgn" method="POST">
+                        <button type="button" class="closeBtn" onclick="closeForm()">×</button>
+                        <h2>Hør mere om vores seminarer</h2>
+                        <label for="navn"></label>
+                        <input type="text" id="navn-seminar" name="navn" placeholder="Navn*" required>
+
+                        <label for="email"></label>
+                        <input type="email" id="email-seminar" name="email" placeholder="Email*" required>
+
+                        <label for="besked"></label>
+                        <textarea id="besked-seminar" name="besked" placeholder="Besked*" required></textarea>
+
+                        <button type="submit" id="seminar-button">SEND</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="om-page" class="page">
+            <h2>Om os</h2>
+            <section id="klubbens_historie">
+                <h3>Klubbens Historie</h3>
+                <p>Mere info kommer...</p>
+            </section>
+            <section id="instruktører">
+                <h3>Instruktører</h3>
+                <div id="rasmus">
+                    <img id="rasmus-billede" src="Rasmus.png" alt="Rasmus Rothmann">
+                    <div class="instruktør-tekst">
+                        <h4>Rasmus Rothmann | Chefinstruktør</h4>
+                        <p>Over 10 års erfaring med Krav Maga</p>
+                        <p>Udlært i nærkamp, ved tjeneste i hæren og udsendt 2 gange.</p>
+                        <p class="nederst">Overdraget medledelse af klubben i 2019, og fuld ledelse i 2022.</p>
+                        <p>Gradueret som instruktør indenfor følgende forbund:</p>
+                        <p>• Krav Maga Street Defence, ved Michael Rüppel</p>
+                        <p>• Martial Arts Association International (MAA-I), Jürgen Kohler</p>
+                        <p class="nederst">• Israeli Krav International (IKI), Moshe Katz</p>
+                        <p>Står jævnligt som vagt ved forskellige arrangementer i lokalområdet.</p>
+                    </div>
+                </div>
+                <div id="ra_certifikater">
+                    <img id="ra_certifikat_s" src="MAA-I sort 1. dan.pdf" alt="Certifikat">
+                    <img class="ra_certifikat" src="Anti terror course.pdf" alt="Certifikat">
+                    <img class="ra_certifikat" src="IKI instructor certificate.pdf" alt="Certifikat">
+                    <img class="ra_certifikat" src="MAA-I Master inst..pdf" alt="Certifikat">
+                    <img class="ra_certifikat" src="Street defence - sort 1. dan.pdf" alt="Certifikat">
+                    <img class="ra_certifikat" src="Street defence inst..pdf" alt="Certifikat">
+                </div>
+                <div id="ronni">
+                    <img id="ronni-billede" src="Ronni.png" alt="Ronni">
+                    <div class="instruktør-tekst">
+                        <h4>Ronnie Hansen | Hjælpeinstruktør</h4>
+                        <p class="nederst">Flere års erfaring med Krav Maga.</p>
+                        <p>Gradueret som instruktør indenfor følgende forbund:</p>
+                        <p class="nederst">• Martial Arts Association International (MAA-I), Jürgen Kohler</p>
+                        <p>Gradueret indenfor følgende forbund:</p>
+                        <p>• Martial Arts Association International (MAA-I)</p>
+                        <p>• Krav Maga Street Defence</p>
+                        <p>• Israeli Krav International</p>
+                    </div>
+                </div>
+                <img id="certifikat" src="MAA-I Basic Instructor-1.png" alt="Certifikat">
+            </section>
+            <section id="ledelse">
+                <h3>Ledelse</h3>
+                <p>Esbjerg Krav Maga er en frivillig organisation bestyret af følgende medlemmer:</p>
+                <p>Hent vores vedtægter <a href="/Esbjerg Krav Maga - Vedtægter 2025 - Scan.pdf" download><u>her</u></a></p>
+                <div id="ledelse-container">
+                    <div class="profil">
+                        <img src="Ronni_profil.png" alt="Ronni Profil">
+                        <h4>Ronnie Hansen | Formand</h4>
+                    </div>
+                    <div class="profil">
+                        <img src="Rasmus_profil.png" alt="Rasmus Profil">
+                        <h4>Rasmus Rothmann | Kasserer</h4>
+                    </div>
+                    <div class="profil">
+                        <img src="Emilie_profil.png" alt="Emilie Profil">
+                        <h4>Emilie Zielke | Næstformand</h4>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="praktisk-page" class="page">
+            <h2>Praktisk info</h2>
+            <section id="træningen">
+                <h3>Træningen</h3>
+                <p>Kom gerne i behageligt træningstøj. Der er adgang til kønsopdelte omklædningsrum med toilet og fælles badefaciliteter.</p>
+                <h6>Retningslinjer og sikkerhedsforanstaltninger under træningen:</h6>
+                <p>• Det forventes at man retter sig efter træningslederen under træningen.</p>
+                <p>• Da vi under træningen kommer hinanden tæt ved, forventes der en god hygiejne fra den enkelte.</p>
+                <p>• Klip neglene så de ikke rager for langt ud, da disse kan skade dig og din sparringspartner.</p>
+                <p>• Smykker frabedes stærkt under træningen, da disse kan skade dig eller dine omgivelser.</p>
+                <div id="træningsbillede-container">
+                    <img class="træningsbillede" src="basic class.png" alt="Træning">
+                    <img class="træningsbillede" src="advanced class.png" alt="Træning">
+                </div>
+            </section>
+            <section id="hold">
+                <h3>Træningstider</h3>
+                <div id="hold_nederst">
+                    <p> Alle er velkomne til at komme og få en gratis prøvetime.</p>
+                    <p><b><a onclick="navigateTo('/booking')">Book her!</a></b></p>
+                </div>
+                <p class="tider">
+                    <b><u>Tirs og Tors 18:00 - 19:00</u></b>
+                </p>
+                <p>
+                    <b>Basistræning:</b> 16+ år. Træningen er tilpasset nye og uerfarende medlemmer, såvel som dem der gerne vil forbedre deres grundform og basisøvelser.
+                </p>
+                <p class="tider">
+                    <b><u>Tirs og Tors 19:00 - 20:30</u></b>
+                </p>
+                <p>
+                    <b>Den almene træning:</b> 16+ år. Vi træner realistisk selvforsvar gennem slag, spark, teknikker og scenarier – tilpasset alle niveauer.
+                </p>
+                <p class="tider">
+                    <b><u>Tirs 17:00 - 17:45</u></b>
+                </p>
+                <p>
+                    <b>Junior træning:</b> 6-15 år. Vi introducerer børnene til selvforsvar gennem leg og grundlæggende motoriske øvelser.
+                </p>
+            </section>
+            <section id="priser">
+                <h3>Priser</h3>
+                <p>Undervisningen koster <b>205 kr. om måneden</b> og betales via abonnement.</p> 
+                <p>Der er løbende måned + 1 måneds opsigelse.</p>
+                <p> </p>
+                <p>Graduering sker når chefinstruktøren mener at man er klar til det, og det koster 300,-</p>
+                <p>Dette dækker pas, certifikat og bælte.</p>
+            </section>
+            <section id="graduering">
+                <h3>Graduering</h3>
+                <p>Graduering er en del af Krav Maga. Det er her du får bevis på dine færdigheder.</p>
+                <p><u>Det er muligt at opnå følgende bæltegrader i krav maga:</u></p>
+                <div id="grad_bund">
+                    <div id="farver">
+                        <p><img class="gradfarver" src="gul.png" alt="🟡" style="vertical-align: middle;"> Gul</p>
+                        <p><img class="gradfarver" src="orange.png" alt="🟠" style="vertical-align: middle;"> Orange</p>
+                        <p><img class="gradfarver" src="lilla.png" alt="🟣" style="vertical-align: middle;"> Lilla</p>
+                        <p><img class="gradfarver" src="blå.png" alt="🔵" style="vertical-align: middle;"> Blå</p>
+                        <p><img class="gradfarver" src="grøn.png" alt="🟢" style="vertical-align: middle;"> Grøn</p>
+                        <p><img class="gradfarver" src="grønbrun.png" alt="🟤🟢" style="vertical-align: middle;"> Grøn-Brun</p>
+                        <p><img class="gradfarver" src="brun.png" alt="🟤" style="vertical-align: middle;"> Brun</p>
+                        <p><img class="gradfarver" src="sort.png" alt="⚫" style="vertical-align: middle;"> Sort</p>
+                    </div>
+                    <img id="grad_billede" src="graduering.png" alt="Graduering">
+                </div>
+            </section>
+        </div>
+        <div id="faq-page" class="page">
+            <h2>FAQ</h2>
+            <details>
+                <summary>Hvad er Krav Maga?</summary>
+                <p class="tekst">Krav Maga er en selvforsvarsteknik, der er udviklet af den israelske hær. Teknikken er baseret på naturlige bevægelser og instinkter, og er designet til at være effektiv i en nødsituation.</p>
+            </details>
+            <details>
+                <summary>Hvad betyder Krav Maga?</summary>
+                <p class="tekst">Krav Maga stammer fra Israel, og betyder nærkamp direkte oversat fra hebraisk.</p>
+            </details>
+            <details>
+                <summary>Må man anvende Krav Maga i det virkelige liv?</summary>
+                <p class="tekst">Ifølge §13 og §14 i Straffeloven må man altid forsvare sig selv og andre i situationer, hvor man udsættes for en reel trussel eller et angreb. Teknikkerne i Krav Maga er designet til sådanne situationer.</p>
+            </details>
+            <details>
+                <summary>Kan alle lære Krav Maga?</summary>
+                <p class="tekst">Ja, alle kan lære Krav Maga. Teknikkerne er designet til at være effektive uanset alder, køn og fysisk formåen.</p>
+            </details>
+            <details>
+                <summary>Kan man konkurrere i Krav Maga?</summary>
+                <p class="tekst">Krav Maga er en selvforsvarsteknik, og derfor er der ingen konkurrencer i Krav Maga. Teknikkerne er designet til at være effektive i en nødsituation, og ikke til at blive brugt i en konkurrencesituation.</p>
+            </details>
+            <details>
+                <summary>Hvilke teknikker anvendes i Krav Maga?</summary>
+                <p class="tekst">I Krav Maga anvendes en lang række afværgeteknikker, slag- og sparketeknikker, faldteknikker samt låsegreb og nedtagning til gulvet.</p>
+            </details>
+            <details>
+                <summary>Hvad kan man forsvare sig imod med Krav Maga?</summary>
+                <p class="tekst">I Krav Maga træner man forsvar mod overfald og trusler, der involdverer stikvåben, slagvåben, skydevåben, slag og spark, omklamring, armgreb samt halsgreb og kvælning.</p>
+            </details>
+            <div class="knapper">
+                <button id="tilmelding-knap" onclick="navigateTo('/tilmeld')">TILMELD DIG NU</button>
+                <button id="booking-knap" onclick="navigateTo('/booking')">BOOK PRØVETIME NU</button>
+            </div>
+        </div>
+        <div id="booking-page" class="page">
+            <h2>Booking</h2>
+            <h3>Book GRATIS prøvetime herunder:</h3>
+            <div id="switch-buttons">
+                <button id="btn-16" class="active" disabled>
+                    <span class="label">16+</span>
+                    <span class="time">kl. 19:00</span>
+                </button>
+                <button id="btn-junior">
+                    <span class="label">Junior</span>
+                    <span class="time">kl. 17:00</span>
+                </button>
+            </div>
+            <p id="trial-info">Prøvetimen foregår kl. 19.00 for 16+'ere, med mindre andet er aftalt.</p>
+            <form id="bookingForm" action="https://formspree.io/f/mqapdper" method="POST">
+                <div id="booking-felter">
+                    <!-- Skjult felt til type -->
+                    <input type="hidden" id="form-type" name="type" value="16+">
+
+                    <input type="text" id="navn-booking" name="navn" placeholder="Navn*" required>
+
+                    <!-- Kun for junior -->
+                    <input type="text" id="foraelder-booking" name="foraelder" placeholder="Forælder/værges navn*" style="display:none;">
+
+                    <input type="tel" id="telefon-booking" name="telefon" placeholder="Telefon*" required>
+                    <span id="telefonFejl-bookingform" class="fejlbesked"></span>
+
+                    <input type="hidden" id="dato-kalender" name="Dato*" placeholder="Dato*" required>
+                </div>
+
+                <button type="submit" id="booking-button">BOOK</button>
+            </form>
+        </div>
+        <div id="tilmeld-page" class="page">
+            <h2>Tilmeld dig</h2>
+            <div id="tekst-boks">
+                <p>Ikke helt sikker endnu?</p>
+                <p>Book en gratis prøvetime <u><a onclick="navigateTo('/booking')">her</u></a>.</p>
+            </div>
+            <div id="switch-buttons-tilmeld">
+                <button id="btn-16-tilmeld" class="active" disabled>16+</button>
+                <button id="btn-junior-tilmeld">Junior</button>
+            </div>
+            <form id="tilmeldForm">
+                <h6>Personlige Oplysninger</h6>
+                <div class="tilmeld-felter">
+                    <div class="række">
+                        <input type="text" id="navn" name="navn" placeholder="Fulde Navn*" required>
+                        <input type="text" id="fødselsdag" name="fødselsdag" placeholder="Fødselsdag* (dd-mm-åååå)" 
+                            pattern="^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-\d{4}$" 
+                            required 
+                            title="Indtast dato i formatet dd-mm-åååå (f.eks. 25-12-2025)">
+                        <span id="age-error" class="overlay-message" style="color: red; display: none;">
+                            Brug junior tilmeldingsformularen for at tilmelde børn under 16 år.
+                        </span>
+                    </div>
+                    <input type="text" id="adresse" name="adresse" placeholder="Adresse*" required>
+                    <div class="række">
+                        <div class="række2">
+                            <input type="text" id="postnr" name="postnr" placeholder="Post Nr.*" required>
+                            <input type="text" id="by" name="by" placeholder="By*" required>
+                        </div>
+                        <input type="tel" id="telefon" name="telefon" placeholder="Telefon*" pattern="^\+?[0-9]{8,15}$" required>
+                    </div>
+                    <input type="email" id="email" name="email" placeholder="Email*" required>
+                </div>
+                <h6 id="nødkontakt-overskrift">Nødkontakt</h6>
+                <div class="tilmeld-felter">
+                    <input type="text" id="nødkontakt" name="nødkontakt" placeholder="Navn*" required>
+                    <input type="text" id="nødkontakt-relation" name="nødkontakt-relation" placeholder="Relation*" required>
+                    <input type="tel" id="nødkontakt-tlf" name="nødkontakt-tlf" placeholder="Telefon*" pattern="^\+?[0-9]{8,15}$" required>
+                    <span id="nødkontaktFejl" class="fejlbesked"></span>
+                </div>
+                <h6>Helbred</h6>
+                <p id="helbred-tekst">Har du nogen medicinske tilstande, skader eller allergier, vi skal være opmærksomme på?</p>
+                <span id="helbred-error" style="color: red; display: none;">Vælg venligst én af mulighederne.</span>
+                <div class="checkbox-container">
+                    <label>
+                        <input type="radio" id="helbred-nej" name="helbred" value="nej">
+                        <p>Nej</p>
+                    </label>
+                    <label>
+                        <input type="radio" id="helbred-ja" name="helbred" value="ja">
+                        <p>Ja</p>
+                    </label>
+                </div>
+                <div id="helbred-text-container" style="display: none; margin-top: 1rem;">
+                    <label for="helbred-beskrivelse">Beskriv venligst:</label>
+                    <textarea id="helbred-beskrivelse" name="helbred-beskrivelse" rows="4" style="width: 100%;"></textarea>
+                </div>
+                <h6>Samtykkeerklæring</h6>
+                <div class="checkbox-container">
+                    <label>
+                        <input type="checkbox" id="ansvarsfraskrivelse" name="ansvarsfraskrivelse" value="ansvarsfraskrivelse">
+                        <p>Ansvarsfraskrivelse*: Jeg accepterer, at deltagelse i Krav Maga-træning sker på eget ansvar, og at klubben ikke kan holdes ansvarlig for eventuelle skader.</p>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="persondata" name="persondata" value="persondata">
+                        <p>Betingelser og privatliv*: Jeg accepterer foreningens <a href="#betingelser-vilkår" onclick="navigateToSection('betingelser-page', 'betingelser-vilkår'); return false;">betingelser og vilkår</a> og <a href="#privatlivspolitik" onclick="navigateToSection('betingelser-page', 'privatlivspolitik'); return false;">privatlivspolitik</a>.</p>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="fototilladelse" name="fototilladelse" value="fototilladelse">
+                        <p id="fototilladelse-tekst">Fototilladelse: Jeg giver tilladelse til, at klubben må tage billeder/videoer af mig (fx til graduering) og bruge dem på sociale medier/hjemmesiden. <span class="italic">(valgfri)</span></p>
+                    </label>
+                    <span id="samtykke-error" style="color: red; display: none;">Acceptér venligst <b>"Ansvarsfraskrivelsen"</b> og <b>"Betingelser og privatliv"</b>.</span>
+                </div>
+                <h6>Betaling</h6>
+                <p class="bb1">Månedlig abonnemnet koster 205 kr. Når du melder dig ind betales der 410kr., så betalingen kan være forudgående.</p>
+                <p class="bb2">Betalingen håndteres via Unioo. Du får tilsendt en mail med instruktioner om at tilknytte dit betalingskort, og så kører det automatisk derfra.
+                <button type="submit" id="tilmeld-button">Tilmeld</button>
+            </form>
+        </div>
+        <div id="betingelser-page" class="page">
+            <section id="betingelser-vilkår">
+                <h2>Handelsbetingelser</h2>
+                <h3>1. Oplysninger om foreningen</h3>
+                <p>Esbjerg Krav Maga</p>
+                <p>Grådybet 18a, 6700 Esbjerg</p>
+                <p>CVR: 45212548</p>
+                <p>mail: krav-maga-esbjerg@outlook.dk</p>
+                <p>Telefon: +45 26 85 04 71</p>
+                <h3>2. Medlemskab og betaling</h3>
+                <p>Undervisning i krav maga tilbydes som en løbende abonnementsordning, hvor der betales kontingent månedligt via Quickpay med betalingskort (Visa og Mastercard). Betaling sker forud for hver periode. Manglende betaling medfører midlertidig udelukkelse fra træning.</p>
+                <h3>3. Seminarer</h3>
+                <p>Virksomheder og større grupper kan booke særskilte seminarer efter aftale. Prisen fremgår af den individuelle aftale, og betaling skal ske forud medmindre andet er aftalt.</p>
+                <h3>4. Binding og opsigelse</h3>
+                <p>Medlemskab kan til enhver tid opsiges skriftligt med 1 måneds varsel til udgangen af en måned. Ved opsigelse stopper betalingerne automatisk efter opsigelsesperioden.</p>
+                <h3>5. Fortrydelsesret</h3>
+                <p>Betaling for medlemskab og seminarer refunderes ikke, medmindre andet er skriftligt aftalt. Ved udeblivelse fra undervisning, sygdom eller personlige forhold gives der heller ikke refusion.</p>
+                <h3>6. Ansvar</h3>
+                <p>Deltagelse i undervisning sker på eget ansvar. Vi tager hensyn til helbred og særlige forhold i det omfang, vi er informeret herom.</p>
+                <h3>7. Klageadgang</h3>
+                <p>Hvis du vil klage over et forløb eller et køb, kan du kontakte os på ovenstående kontaktoplysninger. Du har også mulighed for at klage til:</p>
+                <p><b>Nævnenes Hus</b></p>
+                <p>Toldboden 2</p>
+                <p>8800 Viborg</p>
+                <a href="https://naevneneshus.dk/" target="_blank">www.naevneneshus.dk</a>
+            </section>
+            <section id="privatlivspolitik">
+                <h2>Privatlivspolitik</h2>
+                <h3>1. Dataansvarlig</h3>
+                <p>Esbjerg Krav Maga er dataansvarlig for behandling af personoplysninger.</p>
+                <p><b>Kontakt:</b></p>
+                <p>mail: krav-maga-esbjerg@outlook.dk</p>
+                <p>Telefon: +45 26 85 04 71</p>
+                <h3>2. Hvilke oplysninger vi indsamler</h3>
+                <p>Ved indmelding og tilmelding til aktiviteter indsamler vi følgende oplysninger:</p>
+                <p>• Navn</p>
+                <p>• Adresse</p>
+                <p>• Telefonnummer</p>
+                <p>• E-mail</p>
+                <p>• Fødselsdato</p>
+                <p>• Nødkontaktperson og deres kontaktoplysninger</p>
+                <p>• Helbredsmæssige forhold <i>(frivilligt og kun ift. forhold, instruktører skal være opmærksomme på)</i></p>
+                <h3>3. Formål</h3>
+                <p>Vi behandler dine oplysninger til følgende formål:</p>
+                <p>• Administration af medlemskab og betaling</p>
+                <p>• Planlægge og gennemføre undervisning og seminarer</p>
+                <p>• Sikring af sikkerhed og tryghed under træning</p>
+                <p>• Kommunikation om aktiviteter og ændringer</p>
+                <h3>4. Retsgrundlag</h3>
+                <p>Behandlingen sker på baggrund af:</p>
+                <p><b>Medlemsaftale</b> (GDPR art. 6, stk. 1, litra b)</p>
+                <p><b>Samtykke</b> (for helbredsoplysninger, GDPR art. 9, stk. 2, litra a)</p>
+                <p><b>Retlig forpligtelse</b> (bogføringspligt ift. betaling)</p>
+                <h3>5. Opbevaring og sletning</h3>
+                <p>Oplysninger opbevares så længe du er medlem og i op til 5 år efter sidste betaling pga. regnskabslovgivning. Helbredsoplysninger slettes umiddelbart efter udmeldelse.</p>
+                <h3>6. Deling af oplysninger</h3>
+                <p>Vi deler nødvendige oplysninger med:</p>
+                <p>• Mobilepay, Quickpay og betalingskortudbydere (for at gennemføre betalinger)</p>
+                <p>• Offentlige myndigheder, hvis det er lovpligtigt.</p>
+                <p>Vi sælger <b>aldrig</b> dine oplysninger.</p>
+                <h3>7. Dine rettigheder</h3>
+                <p>Du har ret til:</p>
+                <p>• At få indsigt i dine oplysninger</p>
+                <p>• At få rettet eller slettet oplysninger</p>
+                <p>• At få begrænset eller gøre indsigelse mod behandling</p>
+                <p>• At trække samtykke tilbage</p>
+                <p>• At klage til datatilsynet <a href="www.datatilsynet.dk">(www.datatilsynet.dk)</a></p>
+            </section>
+        </div>
+    </main>
+    <footer id="footer">
+        <div id="footer-box">
+            <div id="footer-box p">
+                <p>ESBJERG KRAV MAGA</p>
+                <p>📌 <a href="https://www.google.com/maps/place/Grådybet+18a,+6700+Esbjerg" target="_blank">Grådybet 18a, 6700 Esbjerg</a></p>
+                <p>📞 <a href="tel:+4526850471">+45 26 85 04 71</a></p>
+                <p>✉️ <a href="mailto:krav-maga-esbjerg@outlook.dk">krav-maga-esbjerg@outlook.dk</a></p>
+            </div>
+            <div id="so-me">
+                <a href="https://www.instagram.com/krav_maga_esbjerg/" target="_blank">
+                    <img class="some" src="insta.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/krav.esbjerg" target="_blank">
+                    <img class="some" src="facebook.png" alt="Facebook">
+                </a>
+            </div>
+            <a href="https://kravmagastreetdefence.com/en" target="_blank">            
+                <img id="footer-logo" src="KM_official_logo.png" alt="Officielt Logo">
+            </a>
+        </div>  
+        <div id="footer-main">
+            <p>&copy; 2025 ESBJERG KRAV MAGA</p>
+            <div id="footer-links">
+                <a href="#betingelser-vilkår" onclick="navigateToSection('betingelser-page', 'betingelser-vilkår'); return false;">betingelser og vilkår</a>
+                <a href="#privatlivspolitik" onclick="navigateToSection('betingelser-page', 'privatlivspolitik'); return false;">privatlivspolitik</a>
+            </div>
+        </div>
+    </footer>   
+<script src="script.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
+</html>
